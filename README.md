@@ -21,7 +21,7 @@ Let’s get started!
 
 ### ESP32 with NRF24L01
 
-_NRF24L01 pinout here_
+[_NRF24L01 pinout here_](https://github.com/adarsh-h-007/ESP32-HSPI-VSPI-Demo/blob/master/Pictures/01%20NRF24L01%20Pinout.png)
 
 [Image Source](https://forum.arduino.cc/t/simple-nrf24l01-2-4ghz-transceiver-demo/405123)
 
