@@ -20,8 +20,7 @@ Let’s get started!
 ## 2. Hardware Connections
 
 ### ESP32 with NRF24L01
-https://github.com/adarsh-h-007/ESP32-HSPI-VSPI-Demo/blob/master/Pictures/01%20NRF24L01%20Pinout.png
-
+![NRF24L01 Pinout](https://github.com/adarsh-h-007/ESP32-HSPI-VSPI-Demo/blob/master/Pictures/01%20NRF24L01%20Pinout.png)
 [Image Source](https://forum.arduino.cc/t/simple-nrf24l01-2-4ghz-transceiver-demo/405123)
 
 |   NRF24L01    |   ESP32   |
@@ -78,7 +77,9 @@ The `main.cpp` file, which contains the code, is stored in the `PlatformIO\<proj
 2. Right-click on the `src` folder and select **New File**. Name the new file `ESP32.cpp`.
 3. Create another file named `ESP8266.cpp` in the `src` folder.
 
-It should now be clear that the code for each board will be written in its respective file. 
+It should now be clear that the code for each board will be written in its respective file.
+
+![Folder Structure](https://github.com/adarsh-h-007/ESP32-HSPI-VSPI-Demo/blob/master/Pictures/02%20folder%20structure.png)
 
 #### Step 3: Configure `platformio.ini`
 To configure PlatformIO to use both `.cpp` files and upload them to their respective boards, open the `platformio.ini` file in your project folder. 
@@ -290,12 +291,16 @@ After replacing everything, we need to add:
 ```
 Under the `#include "MFRC522.h"` line. We add this after replacing the `SPI.` instances because otherwise it’ll replace the SPI in the header file as well, which we don’t want.
 
+![MRFC522 Library Modification](https://github.com/adarsh-h-007/ESP32-HSPI-VSPI-Demo/blob/master/Pictures/03%20MFRC522%20Library%20Modification.png)
+
 Now the library modification is complete, but we still need to modify our code. In our ESP32 code, we need to add:
 
 ```cpp
 extern SPIClass HSPIRFID;
 ```
 after including the header files (`#include` statements) to specify that HSPIRFID has been defined in another file. Otherwise, we’ll get an error.
+
+![extern variable](https://github.com/adarsh-h-007/ESP32-HSPI-VSPI-Demo/blob/master/Pictures/04%20extern%20class%20specify.png)
 
 If you’re really lazy to do all this, just download the `MFRC522.cpp` file from this GitHub repository and replace it with the file in your own project folder. The folder structure of this repository is the same as that of any PlatformIO project. If you do this, make sure to still include `extern SPIClass HSPIRFID;` in your code, or it’ll throw an error.
 
@@ -347,6 +352,8 @@ This is the last step: opening both the serial monitors of ESP32 and ESP8266. It
 4. Repeat the same for the next board (here `nodemcuv2`) as well.
 Now you have both the serial monitors open. Drag and keep them on split screen or do as you wish.
 
+![Serial Monitor Setup](https://github.com/adarsh-h-007/ESP32-HSPI-VSPI-Demo/blob/master/Pictures/05%20Serial%20Monitor.png)
+
 ## For The Lazy Peeps:
 If you don’t want to go through all this or just want to test this quickly for some reason, I’ve got you covered. Just download this repository as a zip file and extract it. Open PlatformIO and click on `Open Project`, navigate to the extracted folder, and click open. Now you can compile and run everything. But your lazy ass will now encounter a problem, most probably; the COM ports won’t match. So suck it up, find your COM ports as mentioned under `Step 5: Configure Upload and Monitor Ports` in Section 3.1, and update the port assignments in your `platformio.ini` file.
 
@@ -360,3 +367,5 @@ I take this moment to thank all the authors of all the resources that I’ve use
 Currently, I’m working on a V2X project with my team for my final year B.Tech project. I don’t know if we’ll be able to pull it off or even if we do, it’ll be impractical and overcomplicate trivial things. I sincerely hope not.
 
 If you’ve made it this far, thanks for reading, and I hope whatever you’re doing works out well. Thank you. :)
+
+![Setup 1](https://github.com/adarsh-h-007/ESP32-HSPI-VSPI-Demo/blob/master/Pictures/06%20Setup.jpg) ![Setup 2](https://github.com/adarsh-h-007/ESP32-HSPI-VSPI-Demo/blob/master/Pictures/07%20Setup.jpg)
