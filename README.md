@@ -356,7 +356,7 @@ Now that’s it, folks. I know this isn’t some novel revolutionary idea that I
 
 I hope someone like me, who’s looking to interface something as obscure as ESP32 with RC522 and NRF24L01 and then communicate with another ESP8266, finds this helpful. Or if you belong to the normal category of sane humans, I hope you learn something from this as well.
 
-I take this moment to thank all the authors of all the resources that I’ve used. If I haven’t credited you, I’m sorry. 
+I take this moment to thank all the authors of all the resources that I’ve used. If I haven’t credited you, I’m sorry. Additionally, I would like to extend a big thank you to ChatGPT for assisting me with this project, helping format and correct the mistakes in this readme file, and making it more presentable.
 
 Currently, I’m working on a V2X project with my team for my final year B.Tech project. I don’t know if we’ll be able to pull it off or even if we do, it’ll be impractical and overcomplicate trivial things. I sincerely hope not.
 
